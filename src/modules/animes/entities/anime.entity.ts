@@ -13,7 +13,7 @@ import {
 @Entity()
 export class Anime {
   @PrimaryGeneratedColumn("uuid")
-  id: string;
+  IDAnime: string;
 
   @Column()
   name: string;

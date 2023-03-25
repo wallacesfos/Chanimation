@@ -60,7 +60,7 @@ export class UsersService {
       IP: userIP,
     });
 
-    return {"message": bearer};
+    return { message: bearer };
   }
 
   async findAll() {

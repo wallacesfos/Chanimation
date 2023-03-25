@@ -4,7 +4,7 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class Episode {
   @PrimaryGeneratedColumn("uuid")
-  id: string;
+  IDEpisode: string;
 
   @Column()
   EpisodeName: string;
