@@ -1,11 +1,17 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { CreateAnimeDto } from './dto/create-anime.dto';
 import { UpdateAnimeDto } from './dto/update-anime.dto';
+import { Animes } from "./entities/anime.entity";
 
 @Injectable()
 export class AnimesService {
+  constructor(
+    @Inject("ANIME_REPOSITORY")
+    private animesRepository: Repository<Anime>
+  )
+  
   create(createAnimeDto: CreateAnimeDto) {
-    return 'This action adds a new anime';
+    return;
   }
 
   findAll() {

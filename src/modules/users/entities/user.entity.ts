@@ -10,10 +10,10 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 
-@Entity({ name: "Users" })
+@Entity()
 export class Users {
   @PrimaryGeneratedColumn("uuid")
-  iduser: string;
+  IDUser: string;
 
   @Column()
   email: string;

@@ -53,14 +53,14 @@ export class UsersService {
       throw new HttpException("Wrong email/password", 401);
     }
 
-    // const bearer = await Token.generateToken({
-    //   IDUser: user.IDUser,
-    //   username: user.username,
-    //   email: user.email,
-    //   IP: userIP,
-    // });
+    const bearer = await Token.generateToken({
+      IDUser: user.IDUser,
+      username: user.username,
+      email: user.email,
+      IP: userIP,
+    });
 
-    return ;
+    return {"message": bearer};
   }
 
   async findAll() {
@@ -69,7 +69,7 @@ export class UsersService {
 
   async findOne(id: string) {
     try {
-      return await this.usersRepository.findOneByOrFail({ iduser: id });
+      return await this.usersRepository.findOneByOrFail({ IDUser: id });
     } catch (error) {
       throw error;
     }
@@ -77,7 +77,7 @@ export class UsersService {
 
   async update(id: string, updateUserDto: UpdateUserDto) {
     try {
-      return await this.usersRepository.update({ iduser: id }, updateUserDto);
+      return await this.usersRepository.update({ IDUser: id }, updateUserDto);
     } catch (error) {
       throw error;
     }
@@ -85,7 +85,7 @@ export class UsersService {
 
   remove(id: string) {
     try {
-      return this.usersRepository.delete({ iduser: id });
+      return this.usersRepository.delete({ IDUser: id });
     } catch (error) {
       throw error;
     }
