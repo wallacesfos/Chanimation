@@ -6,4 +6,5 @@ export class CreateEpisodeDto {
   description: string;
   urlVideo: string;
   imageURL: string;
+  IDAnime: string;
 }
